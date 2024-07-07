@@ -1,11 +1,13 @@
-import Form1 from '@/components/Form/Form1';
-import Form4 from '@/components/Form/Form4';
-import Form5 from '@/components/Form/Form5';
-import Form6 from '@/components/Form/Form6';
-import Form7 from '@/components/Form/Form7';
-import Form8 from '@/components/Form/Form8';
-import { Breadcrumb } from '@/ui/Client';
-import { Heading } from '@/ui/Server';
+import ContactForm from '@/components/Form/ContactForm';
+import SignIn from '@/components/Form/SignIn';
+import SignInV2 from '@/components/Form/SignInV2';
+import SignInV3 from '@/components/Form/SignInV3';
+import SignInV4 from '@/components/Form/SignInV4';
+import SignInV5 from '@/components/Form/SignInV5';
+import SignInV6 from '@/components/Form/SignInV6';
+import SignUp from '@/components/Form/SignUp';
+import SwitchableForm from '@/components/Form/SwitchableForm';
+import { ComponentPortion } from '@/ui/Server';
 
 export const metadata = {
     title: 'Form Components',
@@ -14,51 +16,45 @@ export const metadata = {
 
 const formArr = [
     {
-        name: 'Login Form With Social Icons',
-        Comp: Form1
+        name: 'Signin',
+        Comp: SignIn
     },
     {
-        name: 'Simple Form',
-        Comp: Form4
+        name: 'Signup',
+        Comp: SignUp
     },
     {
-        name: 'Simple Login Form',
-        Comp: Form5
+        name: 'Contact',
+        Comp: ContactForm
     },
     {
-        name: 'Simple Login Form',
-        Comp: Form6
+        name: 'Switchable',
+        Comp: SwitchableForm
     },
     {
-        name: 'Simple Login Form',
-        Comp: Form8
+        name: 'Signin v2',
+        Comp: SignInV2
     },
     {
-        name: 'Switchable Login & Register Form',
-        Comp: Form7
+        name: 'Signin v3',
+        Comp: SignInV3
+    },
+    {
+        name: 'Signin v4',
+        Comp: SignInV4
+    },
+    {
+        name: 'Signin v5',
+        Comp: SignInV5
+    },
+    {
+        name: 'Signin v6',
+        Comp: SignInV6
     }
 ];
 
 export default function FormPage() {
-    return (
-        <div>
-            <Breadcrumb />
-            <Heading>Login Form With Social Icons</Heading>
-            <Form1 />
-            {/* <h1 className="lg:text-2xl md:text-xl text-lg   font-semibold px-4 mt-10 text-white"> Simple Login Form</h1>
-            <Form2/>
-            {/* <h1 className="lg:text-2xl md:text-xl text-lg   font-semibold px-4 mt-10 text-white">Form</h1>
-            <Form3/> */}
-            <Heading>Simple Form</Heading>
-            <Form4 />
-            <Heading>Simple Login Form</Heading>
-            <Form5 />
-            <Heading>Simple Login Form</Heading>
-            <Form6 />
-            <Heading>Simple Login Form</Heading>
-            <Form8 />
-            <Heading>Switchable Login & Register Form</Heading>
-            <Form7 />
-        </div>
-    );
+    // const pages = await glob('pages/**/*.js', { cwd: __dirname });
+    // console.log(pages);
+    return <ComponentPortion arr={formArr} />;
 }

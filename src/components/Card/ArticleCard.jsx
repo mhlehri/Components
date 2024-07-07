@@ -4,7 +4,7 @@ import CP from '@/ui/CP';
 const code = `
 const Card6 = () => {
 return (
-        <div className=" mx-auto my-6 max-w-[350px] rounded-lg bg-white font-sans shadow-lg dark:bg-[#18181B]">
+        <div className=" mx-auto my-6 max-w-[350px] rounded-lg bg-white shadow-lg dark:bg-[#18181B]">
             <div className="flex items-center justify-between gap-10 px-4 py-4">
                 {/* Avatar image  */}
                 <div className="flex items-center gap-3">
@@ -57,7 +57,7 @@ return (
 export default function ArticleCard() {
     return (
         <CP code={code} id="Article Card">
-            <div className=" mx-auto my-6 max-w-[350px] rounded-lg bg-white font-sans shadow-lg dark:bg-[#18181B]">
+            <div className="mx-auto my-6 max-w-[350px] rounded-lg bg-white shadow-lg dark:bg-[#18181B]">
                 <div className="flex items-center justify-between gap-10 px-4 py-4">
                     {/* Avatar image  */}
                     <div className="flex items-center gap-3">

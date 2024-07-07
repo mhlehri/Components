@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const code = `export default function ProductCard2() {
 return (
-    <div className="w-full max-w-[340px] space-y-3 rounded-xl bg-white p-4 font-sans shadow-lg dark:bg-[#18181B]">
+    <div className="w-full max-w-[340px] space-y-3 rounded-xl bg-white p-4 shadow-lg dark:bg-[#18181B]">
         <div className="relative flex h-48 w-full justify-center lg:h-[260px]">
             <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
                 {/* love  */}
@@ -20,8 +20,8 @@ return (
             <p>$20</p>
         </div>
         <div className="flex flex-wrap items-center justify-between gap-6 text-sm md:text-base">
-            <button className="rounded-lg bg-[#49B2FF] px-4 py-2 font-sans font-semibold text-white duration-300 hover:scale-105 hover:bg-sky-600">View Details</button>
-            <button className="rounded-lg bg-gray-400 px-4 py-2 font-sans font-semibold text-white duration-300 hover:scale-95 hover:bg-gray-600">Add to Cart</button>
+            <button className="rounded-lg bg-[#49B2FF] px-4 py-2 font-semibold text-white duration-300 hover:scale-105 hover:bg-sky-600">View Details</button>
+            <button className="rounded-lg bg-gray-400 px-4 py-2 font-semibold text-white duration-300 hover:scale-95 hover:bg-gray-600">Add to Cart</button>
         </div>
     </div>
     );
@@ -30,14 +30,14 @@ return (
 export default function ProductCard2(i) {
     return (
         <CP code={code} i={i}>
-            <div className="mx-auto w-full max-w-[340px] space-y-3 rounded-xl bg-white p-4 font-sans shadow-lg dark:bg-[#18181B]">
+            <div className="mx-auto w-full max-w-[340px] space-y-3 rounded-xl bg-white p-4 shadow-lg dark:bg-[#18181B]">
                 <div className="relative flex h-48 w-full justify-center lg:h-[260px]">
                     <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
                         {/* love  */}
                         <div className="flex items-center">
                             <svg
                                 width={30}
-                                className="cursor-pointer fill-transparent stroke-white stroke-2 hover:fill-red-500 hover:stroke-red-500 "
+                                className="cursor-pointer fill-transparent stroke-white stroke-2 hover:fill-red-500 hover:stroke-red-500"
                                 viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
@@ -54,8 +54,8 @@ export default function ProductCard2(i) {
                     <p className="font-semibold">$20</p>
                 </div>
                 <div className="flex gap-4">
-                    <button className="rounded-lg bg-slate-800 px-6 py-2 text-[12px] font-semibold text-white duration-300 hover:bg-slate-950 sm:text-sm md:text-base ">Add to Cart</button>
-                    <button className="rounded-md border border-black px-4 py-2 duration-300 hover:bg-gray-200  dark:border-white  dark:hover:bg-white dark:hover:text-slate-800">View Details</button>
+                    <button className="rounded-lg bg-slate-800 px-6 py-2 text-[12px] font-semibold text-white duration-300 hover:bg-slate-950 sm:text-sm md:text-base">Add to Cart</button>
+                    <button className="rounded-md border border-black px-4 py-2 duration-300 hover:bg-gray-200 dark:border-white dark:hover:bg-white dark:hover:text-slate-800">View Details</button>
                 </div>
             </div>
         </CP>

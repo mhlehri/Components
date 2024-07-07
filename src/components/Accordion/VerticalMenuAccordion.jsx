@@ -4,7 +4,7 @@ import CP from '@/ui/CP';
 
 const code = `import { useState } from 'react';
 
-const accordionData = [{title: 'heading', subtitle: 'Hi!~ How are you doing?', colorBg: 'bg-amber-500', colorBorder: 'border-amber-500'},{title: 'heading', subtitle: 'Hi!~ How are you doing? This is my new', colorBg: 'bg-orange-500', colorBorder: 'border-orange-500'},{title: 'heading', subtitle: 'Hi!~ How are you doing?', colorBg: 'bg-red-500', colorBorder: 'border-red-500'},{title: 'heading', subtitle: 'Hi!~ How are you doing?', colorBg: 'bg-sky-500', colorBorder: 'border-sky-500'},{title: 'heading', subtitle: 'Hi!~ How are you doing?', colorBg: 'bg-purple-500', colorBorder: 'border-purple-500'}];
+const accordionData = [{title: 'heading', subtitle: 'Hey! How are you doing?', colorBg: 'bg-amber-500', colorBorder: 'border-amber-500'},{title: 'heading', subtitle: 'Hey! How are you doing? This is my new', colorBg: 'bg-orange-500', colorBorder: 'border-orange-500'},{title: 'heading', subtitle: 'Hey! How are you doing?', colorBg: 'bg-red-500', colorBorder: 'border-red-500'},{title: 'heading', subtitle: 'Hey! How are you doing?', colorBg: 'bg-sky-500', colorBorder: 'border-sky-500'},{title: 'heading', subtitle: 'Hey! How are you doing?', colorBg: 'bg-purple-500', colorBorder: 'border-purple-500'}];
 
 export default function VerticalMenuAccordion() {
     // Toggle State and Function
@@ -36,31 +36,31 @@ export default function VerticalMenuAccordion() {
 const accordionData = [
     {
         title: 'heading 1',
-        subtitle: 'Hi!~ How are you doing?',
+        subtitle: 'Hey! How are you doing?',
         colorBg: 'bg-amber-500',
         colorBorder: 'border-amber-500'
     },
     {
         title: 'heading 2',
-        subtitle: 'Hi!~ How are you doing?',
+        subtitle: 'Hey! How are you doing?',
         colorBg: 'bg-orange-500',
         colorBorder: 'border-orange-500'
     },
     {
         title: 'heading 3',
-        subtitle: 'Hi!~ How are you doing?',
+        subtitle: 'Hey! How are you doing?',
         colorBg: 'bg-red-500',
         colorBorder: 'border-red-500'
     },
     {
         title: 'heading 4',
-        subtitle: 'Hi!~ How are you doing?',
+        subtitle: 'Hey! How are you doing?',
         colorBg: 'bg-sky-500',
         colorBorder: 'border-sky-500'
     },
     {
         title: 'heading 5',
-        subtitle: 'Hi!~ How are you doing?',
+        subtitle: 'Hey! How are you doing?',
         colorBg: 'bg-purple-500',
         colorBorder: 'border-purple-500'
     }
@@ -76,7 +76,7 @@ export default function VerticalMenuAccordion(i) {
             <div className="flex h-screen items-center justify-center md:block md:h-auto">
                 <div className="mx-auto flex min-h-[300px] w-fit rotate-90 gap-1 md:rotate-0">
                     {accordionData?.map((data, idx) => (
-                        <div key={idx} className="flex ">
+                        <div key={idx} className="flex">
                             {/* toggle item */}
                             <button onClick={() => handleToggle(idx)} className={`flex h-full w-14 flex-col items-center justify-around ${data?.colorBg} relative rounded-lg text-white`}>
                                 {isActive === idx && (
@@ -91,7 +91,7 @@ export default function VerticalMenuAccordion(i) {
                                     isActive === idx ? 'opacity-1 scale-1 h-[200px] w-[300px] px-5 md:h-auto md:w-56' : 'w-0 scale-0 opacity-0'
                                 } mt-12 -rotate-90 text-black duration-300 ease-in-out md:ml-2 md:mt-0 md:rotate-0`}
                             >
-                                <h2 className="font-black dark:text-white lg:text-2xl">{data?.title}</h2>
+                                <h2 className="font-black lg:text-2xl dark:text-white">{data?.title}</h2>
                                 <p className="text-black/60 dark:text-white/60">{data?.subtitle}</p>
                             </div>
                         </div>

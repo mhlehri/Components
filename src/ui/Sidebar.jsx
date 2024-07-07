@@ -9,7 +9,7 @@ import { RiCloseFill, RiMenu2Line } from 'react-icons/ri';
 export function SidebarMenuItem({ menuItem, setIsOpen }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(true);
     const path = usePathname();
-    console.log(path);
+    // console.log(path);
     return (
         <div className={`${path.includes('components') && menuItem.about === 'Blocks' ? 'hidden' : path.includes('blocks') && menuItem.about === 'Components' ? 'hidden' : null}`}>
             {/* click event div  */}
@@ -26,7 +26,7 @@ export function SidebarMenuItem({ menuItem, setIsOpen }) {
                                 {menuItem.about === 'Getting Start' ? (
                                     <h1 className="pl-2 lg:pl-0">
                                         <span
-                                            className={`text-sm duration-200 ${path.includes(item.route.replace(/\s+/g, '')) ? 'text-sky-400' : 'group-hover:pl-[2px] group-hover:tracking-widest group-hover:text-white '}`}
+                                            className={`text-sm duration-200 ${path.includes(item.route.replace(/\s+/g, '')) ? 'text-sky-400' : 'group-hover:pl-[2px] group-hover:tracking-widest group-hover:text-white'}`}
                                         >
                                             {item.route}
                                         </span>
@@ -43,7 +43,7 @@ export function SidebarMenuItem({ menuItem, setIsOpen }) {
                                         href={`/${menuItem.about.toLowerCase()}/${item.route.toLowerCase().replace(/\s+/g, '')}`}
                                     >
                                         <span
-                                            className={`${path === `/${menuItem.about.toLowerCase()}/${item.route.toLowerCase().replace(/\s+/g, '')}` ? 'font-semibold text-black dark:text-white' : 'group-hover:pl-[2px] group-hover:font-medium  group-hover:tracking-widest group-hover:text-black dark:group-hover:text-white'} text-sm duration-200 `}
+                                            className={`${path === `/${menuItem.about.toLowerCase()}/${item.route.toLowerCase().replace(/\s+/g, '')}` ? 'font-semibold text-black dark:text-white' : 'group-hover:pl-[2px] group-hover:font-medium group-hover:tracking-widest group-hover:text-black dark:group-hover:text-white'} text-sm duration-200`}
                                         >
                                             {item?.route}
                                         </span>
@@ -113,7 +113,7 @@ export default function Sidebar() {
     return (
         <>
             <div
-                className={`sidebar fixed top-0 z-[99] h-screen select-none overflow-hidden duration-300 md:text-lg lg:visible lg:top-auto lg:h-ch lg:pl-0 lg:text-base lg:backdrop-blur-0 ${isOpen ? 'visible left-0 w-64 origin-left bg-white/90 backdrop-blur-3xl dark:bg-black/90 lg:left-auto lg:border-none lg:bg-transparent ' : 'invisible -left-64 lg:visible lg:left-auto'} lg:w-48`}
+                className={`sidebar fixed top-0 z-[99] h-screen select-none overflow-hidden duration-300 md:text-lg lg:visible lg:top-auto lg:h-ch lg:pl-0 lg:text-base lg:backdrop-blur-0 ${isOpen ? 'visible left-0 w-64 origin-left bg-white/90 backdrop-blur-3xl dark:bg-black/90 lg:left-auto lg:border-none lg:bg-transparent' : 'invisible -left-64 lg:visible lg:left-auto'} lg:w-48`}
             >
                 <div className="sticky top-0 flex items-center justify-between border-b bg-white py-2 pr-2 text-slate-800 dark:text-white lg:hidden">
                     <Link href="/" className="group flex flex-1 items-center gap-px font-semibold">

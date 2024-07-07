@@ -11,7 +11,7 @@ const code = `export default function ProfileCard ()  {
   ]
   
   return (
-        <div className="flex max-w-[350px] flex-col items-center justify-center space-y-4 rounded-xl bg-white p-8 font-sans shadow-lg dark:bg-[#18181B]">
+        <div className="flex max-w-[350px] flex-col items-center justify-center space-y-4 rounded-xl bg-white p-8 shadow-lg dark:bg-[#18181B]">
             <div className="group relative">
                 <img width={110} height={110} className="h-[110px] w-[110px] rounded-full bg-slate-500 object-cover" src="https://source.unsplash.com/300x300/?profile" alt="card navigate ui" />
                 <span className="absolute bottom-3 right-0 h-5 w-5 rounded-full border-[3px] border-white bg-green-500 dark:border-[#18181B]"></span>
@@ -200,7 +200,7 @@ export default function ProfileCard(i) {
 
     return (
         <CP code={code} i={i}>
-            <div className="mx-auto flex max-w-[350px] flex-col items-center justify-center space-y-4 rounded-xl bg-white p-8 font-sans shadow-lg dark:bg-[#18181B]">
+            <div className="mx-auto flex max-w-[350px] flex-col items-center justify-center space-y-4 rounded-xl bg-white p-8 shadow-lg dark:bg-[#18181B]">
                 <div className="group relative">
                     <Image width={110} height={110} className="h-[110px] w-[110px] rounded-full bg-slate-500 object-cover" src="https://source.unsplash.com/300x300/?profile" alt="card navigate ui" />
                     <span className="absolute bottom-3 right-0 h-5 w-5 rounded-full border-[3px] border-white bg-green-500 dark:border-[#18181B]"></span>

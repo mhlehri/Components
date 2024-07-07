@@ -76,33 +76,12 @@ export function getBookmarkById(category, name) {
     return categoryBookmarks.find((bookmark) => bookmark.name === name) || null;
 }
 
-export function removeBookmark(category, id) {
+export function removeBookmark(category, name) {
     loadBookmarks();
     const categoryBookmarks = bookmarks[category] || [];
-    const index = categoryBookmarks.findIndex((bookmark) => bookmark.id === id);
+    const index = categoryBookmarks.findIndex((bookmark) => bookmark.name === name);
     if (index !== -1) categoryBookmarks.splice(index, 1);
     saveBookmarks();
-}
-
-export function Gear() {
-    const [clicked, setClicked] = useState(false);
-    const gear = useRef(null);
-    // useEffect(() => {
-    //     const close = (e) => {
-    //         if (gear.current && !gear.current.contains(e.target)) setClicked(false);
-    //     };
-    //     document.addEventListener('mousedown', close);
-    //     return () => document.removeEventListener('mousedown', close);
-    // }, []);
-    return (
-        <div className="fixed right-0 top-1/2 flex items-center justify-center rounded-l-lg bg-sky-400 p-2 text-xl text-white" ref={gear}>
-            <FaGear onClick={() => setClicked((prevState) => !prevState)} className={`${clicked ? 'rotate-180' : ''} duration-200`} />
-            <div className={`${clicked ? 'visible' : 'invisible'} absolute bottom-10 space-y-2 rounded-l-lg bg-sky-400 p-2 text-white`}>
-                <ThemeSwitch />
-                <FaBookmark />
-            </div>
-        </div>
-    );
 }
 
 export function BookmarkDrawer() {
@@ -131,5 +110,26 @@ export function Breadcrumb() {
             <FaAngleRight className="mx-1 inline-block size-3" />
             <span className="font-semibold">{secondSegment}</span>
         </h6>
+    );
+}
+
+export function Gear() {
+    const [clicked, setClicked] = useState(false);
+    const gear = useRef(null);
+    // useEffect(() => {
+    //     const close = (e) => {
+    //         if (gear.current && !gear.current.contains(e.target)) setClicked(false);
+    //     };
+    //     document.addEventListener('mousedown', close);
+    //     return () => document.removeEventListener('mousedown', close);
+    // }, []);
+    return (
+        <div className="fixed right-0 top-1/2 flex items-center justify-center rounded-l-lg bg-sky-400 p-2 text-xl text-white" ref={gear}>
+            <FaGear onClick={() => setClicked((prevState) => !prevState)} className={`${clicked ? 'rotate-180' : ''} duration-200`} />
+            <div className={`${clicked ? 'visible' : 'invisible'} absolute bottom-10 space-y-2 rounded-l-lg bg-sky-400 p-2 text-white`}>
+                <ThemeSwitch />
+                <FaBookmark />
+            </div>
+        </div>
     );
 }

@@ -2,8 +2,9 @@ import { Breadcrumb } from './Client';
 
 export function Heading({ children, id }) {
     return (
-        <h1 className="text-lg font-semibold text-black dark:text-white sm:text-xl lg:text-3xl" id={id}>
+        <h1 className="text-lg font-semibold text-black sm:text-xl lg:text-3xl dark:text-white" id={id}>
             {children}
+            {/* <hr className="mt-2 dark:border-zinc-800" /> */}
         </h1>
     );
 }

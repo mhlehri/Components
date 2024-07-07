@@ -2,12 +2,6 @@
 import CP from '@/ui/CP';
 import React, { useState } from 'react';
 
-const info = {
-    id: 'love-rating',
-    name: 'Love rating',
-    url: '/components/rating#love-rating'
-};
-
 const code = `
 import { useState } from 'react';
 

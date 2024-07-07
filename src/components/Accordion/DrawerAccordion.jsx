@@ -4,7 +4,7 @@ import CP from '@/ui/CP';
 
 const code = `import { useState } from 'react';
 
-const accordionData = [{title: 'heading 1', subtitle: 'Hi!~ How are you doing?'},{title: 'heading 2', subtitle: 'Hi!~ How are you doing?'},{title: 'heading 3', subtitle: 'Hi!~ How are you doing?'},{title: 'heading 4', subtitle: 'Hi!~ How are you doing?'},{title: 'heading 5', subtitle: 'Hi!~ How are you doing?'}];
+const accordionData = [{title: 'heading 1', subtitle: 'Hey! How are you doing?'},{title: 'heading 2', subtitle: 'Hey! How are you doing?'},{title: 'heading 3', subtitle: 'Hey! How are you doing?'},{title: 'heading 4', subtitle: 'Hey! How are you doing?'},{title: 'heading 5', subtitle: 'Hey! How are you doing?'}];
 
 export default function DrawerAccordion() {
     // Toggle State and Function
@@ -37,23 +37,23 @@ export default function DrawerAccordion() {
 const accordionData = [
     {
         title: 'heading 1',
-        subtitle: 'Hi!~ How are you doing?'
+        subtitle: 'Hey! How are you doing?'
     },
     {
         title: 'heading 2',
-        subtitle: 'Hi!~ How are you doing?'
+        subtitle: 'Hey! How are you doing?'
     },
     {
         title: 'heading 3',
-        subtitle: 'Hi!~ How are you doing?'
+        subtitle: 'Hey! How are you doing?'
     },
     {
         title: 'heading 4',
-        subtitle: 'Hi!~ How are you doing?'
+        subtitle: 'Hey! How are you doing?'
     },
     {
         title: 'heading 5',
-        subtitle: 'Hi!~ How are you doing?'
+        subtitle: 'Hey! How are you doing?'
     }
 ];
 export default function DrawerAccordion(i) {

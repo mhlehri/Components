@@ -36,65 +36,55 @@ export const SquareCardPagination = () => {
 `;
 
 const SquareCardPagination = () => {
-  const [pageNumber, setPageNumber] = useState(0);
-  const page = 5; // Adjust the page numbers the way you want
-  const updatePageNumber = (num) => {
-    if (num > page - 1 || 0 > num) {
-      return setPageNumber(0);
-    }
-    setPageNumber(num);
-  };
-  return (
-    <CP code={codeStr}>
-      <div className="mx-auto flex w-fit select-none items-center justify-center gap-3 rounded-md bg-white p-2 shadow-lg">
-        {/* left arrow */}
-        <div
-          onClick={() => {
-            updatePageNumber(pageNumber - 1);
-          }}
-          className=" scale-100 cursor-pointer rounded-md bg-sky-100 px-1 py-1 transition-all duration-200 hover:scale-110"
-        >
-          <svg className="w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" strokeWidth={0} />
-            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-            <g id="SVGRepo_iconCarrier">
-              {' '}
-              <path d="M15 7L10 12L15 17" stroke="#0284C7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />{' '}
-            </g>
-          </svg>
-        </div>
-        <div className="flex items-center justify-center gap-2 ">
-          {[...Array(page).keys()].map((item, ind) => (
-            <div
-              onClick={() => {
-                setPageNumber(item);
-              }}
-              className={`scale-100 cursor-pointer px-3 text-sm transition-all duration-200 hover:scale-110 ${pageNumber === item ? 'bg-sky-500 text-white' : 'bg-white'} rounded-md  border-sky-300 py-[6px]   font-semibold text-gray-700`}
-              key={item}
-            >
-              {item + 1}
+    const [pageNumber, setPageNumber] = useState(0);
+    const page = 5; // Adjust the page numbers the way you want
+    const updatePageNumber = (num) => {
+        if (num > page - 1 || 0 > num) {
+            return setPageNumber(0);
+        }
+        setPageNumber(num);
+    };
+    return (
+        <CP code={codeStr}>
+            <div className="mx-auto flex w-fit select-none items-center justify-center gap-3 rounded-md bg-white p-2 shadow-lg">
+                {/* left arrow */}
+                <div
+                    onClick={() => {
+                        updatePageNumber(pageNumber - 1);
+                    }}
+                    className="scale-100 cursor-pointer rounded-md bg-sky-100 px-1 py-1 transition-all duration-200 hover:scale-110"
+                >
+                    <svg className="w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 7L10 12L15 17" stroke="#0284C7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />{' '}
+                    </svg>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                    {[...Array(page).keys()].map((item, ind) => (
+                        <div
+                            onClick={() => {
+                                setPageNumber(item);
+                            }}
+                            className={`scale-100 cursor-pointer px-3 text-sm transition-all duration-200 hover:scale-110 ${pageNumber === item ? 'bg-sky-500 text-white' : 'bg-white'} rounded-md border-sky-300 py-[6px] font-semibold text-gray-700`}
+                            key={item}
+                        >
+                            {item + 1}
+                        </div>
+                    ))}
+                </div>
+                {/* right arrow */}
+                <div
+                    onClick={() => {
+                        updatePageNumber(pageNumber + 1);
+                    }}
+                    className="scale-100 cursor-pointer rounded-md bg-sky-100 px-1 py-1 transition-all duration-200 hover:scale-110"
+                >
+                    <svg className="w-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 7L15 12L10 17" stroke="#0284C7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>{' '}
+                    </svg>
+                </div>
             </div>
-          ))}
-        </div>
-        {/* right arrow */}
-        <div
-          onClick={() => {
-            updatePageNumber(pageNumber + 1);
-          }}
-          className=" scale-100 cursor-pointer rounded-md bg-sky-100 px-1 py-1 transition-all duration-200 hover:scale-110"
-        >
-          <svg className="w-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              {' '}
-              <path d="M10 7L15 12L10 17" stroke="#0284C7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>{' '}
-            </g>
-          </svg>
-        </div>
-      </div>
-    </CP>
-  );
+        </CP>
+    );
 };
 
 export default SquareCardPagination;

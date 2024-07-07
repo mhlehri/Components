@@ -12,19 +12,19 @@ export default function BasicAccordion() {
   };
 
     return (
-        <div className="mx-auto max-w-[500px] font-sans">
+        <div className="mx-auto max-w-[500px] bg-white px-2 *:mix-blend-difference dark:bg-inherit">
             {dataArr.map((PerAccordion, idx) => (
                 <div key={idx} className="border-b border-gray-500/50 py-3">
-                    <button onClick={() => toggle(idx)} className="flex h-full w-full justify-between font-medium text-black outline-none dark:text-white">
+                    <button onClick={() => toggle(idx)} className="flex h-full w-full justify-between font-medium outline-none text-white">
                         <span>{PerAccordion.title}</span>
                         <span className="rounded-full p-2">
-                            <svg className="ml-8 size-3 shrink-0 fill-black dark:fill-white" xmlns="http://www.w3.org/2000/svg">
+                            <svg className="ml-8 size-3 shrink-0 fill-white" xmlns="http://www.w3.org/2000/svg">
                                 <rect y="5" width="12" height="2" rx="1" className={\`origin-center transform transition duration-200 ease-out \${isOpen === idx && '!rotate-180'}\`} />
                                 <rect y="5" width="12" height="2" rx="1" className={\`origin-center rotate-90 transform transition duration-200 ease-out \${isOpen === idx && '!rotate-180'}\`} />
                             </svg>
                         </span>
                     </button>
-                    <div className={\`grid overflow-hidden text-gray-800 transition-all duration-300 ease-in-out dark:text-gray-300 \${isOpen === idx ? 'grid-rows-[1fr] pb-1 pt-3 opacity-100' : 'grid-rows-[0fr] opacity-0'}\`}>
+                    <div className={\`grid overflow-hidden text-zinc-400 transition-all duration-300 ease-in-out \${isOpen === idx ? 'grid-rows-[1fr] pb-1 pt-3 opacity-100' : 'grid-rows-[0fr] opacity-0'}\`}>
                         <div className="overflow-hidden pr-4 text-sm">{PerAccordion.description}</div>
                     </div>
                 </div>
@@ -59,20 +59,20 @@ export default function BasicAccordion(i) {
 
     return (
         <CP code={code} i={i}>
-            <div className="mx-auto max-w-[500px] font-sans">
+            <div className="mx-auto max-w-[500px] bg-white px-2 *:mix-blend-difference dark:bg-inherit">
                 {dataArr.map((PerAccordion, idx) => (
                     <div key={idx} className="border-b border-gray-500/50 py-3">
-                        <button onClick={() => toggle(idx)} className="flex h-full w-full justify-between font-medium text-black outline-none dark:text-white">
+                        <button onClick={() => toggle(idx)} className="flex h-full w-full justify-between font-medium text-white outline-none">
                             <span>{PerAccordion.title}</span>
-                            <span className="rounded-full p-2">
-                                <svg className="ml-8 size-3 shrink-0 fill-black dark:fill-white" xmlns="http://www.w3.org/2000/svg">
+                            <span className="rounded-full">
+                                <svg className="ml-8 size-3 shrink-0 fill-white" xmlns="http://www.w3.org/2000/svg">
                                     <rect y="5" width="12" height="2" rx="1" className={`origin-center transform transition duration-200 ease-out ${isOpen === idx && '!rotate-180'}`} />
                                     <rect y="5" width="12" height="2" rx="1" className={`origin-center rotate-90 transform transition duration-200 ease-out ${isOpen === idx && '!rotate-180'}`} />
                                 </svg>
                             </span>
                         </button>
                         <div
-                            className={`grid overflow-hidden text-gray-800 transition-all duration-300 ease-in-out dark:text-gray-300 ${isOpen === idx ? 'grid-rows-[1fr] pb-1 pt-3 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                            className={`grid overflow-hidden text-zinc-400 transition-all duration-300 ease-in-out ${isOpen === idx ? 'grid-rows-[1fr] pb-1 pt-3 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                         >
                             <div className="overflow-hidden pr-4 text-sm">{PerAccordion.description}</div>
                         </div>
