@@ -1,5 +1,5 @@
 <p align='center'>
-<img width='100' height='100' src='https://github.com/mhlehri/NavigateUI/assets/89932017/f5d6b7ba-adec-4f20-b700-310cd7b9679b' alt='navigateui logo'/>
+<img width='100' height='100' src='https://raw.githubusercontent.com/NavigateXtend/NavigateUI/development/src/app/icon.png' alt='navigateui logo'/>
 </p>
 
 # ```Navigate UI``` - React and Tailwind CSS Components Library
