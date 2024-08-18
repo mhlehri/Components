@@ -12,10 +12,10 @@ export default function BasicAccordion() {
   };
 
     return (
-        <div className="mx-auto max-w-[500px] bg-white px-2 *:mix-blend-difference dark:bg-inherit">
+        <div className="w-full max-w-[500px] rounded-lg bg-white p-3 *:mix-blend-difference dark:bg-zinc-800">
             {dataArr.map((PerAccordion, idx) => (
-                <div key={idx} className="border-b border-gray-500/50 py-3">
-                    <button onClick={() => toggle(idx)} className="flex h-full w-full justify-between font-medium outline-none text-white">
+                <div key={idx} className="border-b border-gray-500/50 py-3 last-of-type:border-b-0">
+                    <button onClick={() => toggle(idx)} className="flex h-full w-full items-center justify-between font-medium text-white outline-none">
                         <span>{PerAccordion.title}</span>
                         <span className="rounded-full p-2">
                             <svg className="ml-8 size-3 shrink-0 fill-white" xmlns="http://www.w3.org/2000/svg">
@@ -59,10 +59,10 @@ export default function BasicAccordion(i) {
 
     return (
         <CP code={code} i={i}>
-            <div className="mx-auto max-w-[500px] bg-white px-2 *:mix-blend-difference dark:bg-inherit">
+            <div className="mx-auto w-full max-w-[500px] rounded-lg bg-white p-3 *:mix-blend-difference dark:bg-zinc-800">
                 {dataArr.map((PerAccordion, idx) => (
-                    <div key={idx} className="border-b border-gray-500/50 py-3">
-                        <button onClick={() => toggle(idx)} className="flex h-full w-full justify-between font-medium text-white outline-none">
+                    <div key={idx} className="border-b border-gray-500/50 py-3 last-of-type:border-b-0">
+                        <button onClick={() => toggle(idx)} className="flex h-full w-full items-center justify-between font-medium text-white outline-none">
                             <span>{PerAccordion.title}</span>
                             <span className="rounded-full">
                                 <svg className="ml-8 size-3 shrink-0 fill-white" xmlns="http://www.w3.org/2000/svg">

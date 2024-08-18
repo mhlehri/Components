@@ -1,27 +1,9 @@
 'use client';
 import { useTheme } from 'next-themes';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { FaAngleRight, FaBookmark, FaGear, FaGreaterThan } from 'react-icons/fa6';
+import { FaBookmark, FaGear } from 'react-icons/fa6';
 import { FiMoon, FiSun } from 'react-icons/fi';
-export function NavMenu() {
-    const path = usePathname();
-    return (
-        <ul className="hidden items-center justify-center gap-2 font-mono sm:gap-10 sm:text-base lg:flex">
-            <li className={`${path.includes('components') ? 'font-bold text-sky-700 dark:text-sky-400' : ''}`}>
-                <Link href="/components/accordion" className="text-sm">
-                    Components
-                </Link>
-            </li>
-            <li className={`${path.includes('block') ? 'font-semibold text-sky-800 dark:text-sky-400' : ''}`}>
-                <Link href="/blocks" className="text-sm">
-                    Blocks
-                </Link>
-            </li>
-        </ul>
-    );
-}
 
 export default function ThemeSwitch() {
     const [mounted, setMounted] = useState(false);
@@ -84,35 +66,6 @@ export function removeBookmark(category, name) {
     saveBookmarks();
 }
 
-export function BookmarkDrawer() {
-    return (
-        <Link href="/bookmarks">
-            <FaBookmark size={20} />
-        </Link>
-    );
-}
-
-export function Breadcrumb() {
-    const path = usePathname();
-    const regex = /^\/([^\/]+)\/([^\/]+)$/;
-    const match = path.match(regex);
-
-    if (!match) {
-        return null;
-    }
-    // console.log(match);
-
-    const [, firstSegment, secondSegment] = match;
-
-    return (
-        <h6 className="mb-5 text-sm capitalize">
-            <span className="text-zinc-500 dark:text-zinc-400">{firstSegment}</span>
-            <FaAngleRight className="mx-1 inline-block size-3" />
-            <span className="font-semibold">{secondSegment}</span>
-        </h6>
-    );
-}
-
 export function Gear() {
     const [clicked, setClicked] = useState(false);
     const gear = useRef(null);
@@ -132,4 +85,18 @@ export function Gear() {
             </div>
         </div>
     );
+}
+
+export function Logo() {
+    // const [mounted, setMounted] = useState(false);
+    // const { setTheme, resolvedTheme } = useTheme();
+    // useEffect(() => setMounted(true), []);
+    // if (!mounted) return <Image src="/logoDark.svg" className="h-6 w-[25px]" width={25} height={24} alt="navigate ui logo" />;
+    // if (resolvedTheme === 'dark') {
+    //     return <Image src="/logoDark.svg" className="h-6 w-[25px]" width={25} height={24} alt="navigate ui logo" />;
+    // }
+    // if (resolvedTheme === 'light') {
+    //     return <Image src="/logo.svg" className="h-6 w-[25px]" width={25} height={24} alt="navigate ui logo" />;
+    // }
+    return <Image src="/RedLogo.svg" className="h-6 w-[25px]" width={25} height={24} alt="navigate ui logo" />;
 }

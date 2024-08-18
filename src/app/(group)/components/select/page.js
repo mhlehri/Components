@@ -1,5 +1,5 @@
 import BasicSelect from '@/components/Select/BasicSelect';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Selector Components',

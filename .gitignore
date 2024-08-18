@@ -44,5 +44,5 @@ dist
 dist-ssr
 
 package-lock.json
-
+pnpm-lock.yaml
 bun.lockb

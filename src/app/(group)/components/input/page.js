@@ -3,7 +3,7 @@ import FloatingPlaceholder from '@/components/Input/FloatingPlaceholder';
 import FloatingPlaceholderInside from '@/components/Input/FloatingPlaceholderInside';
 import InputWithRing from '@/components/Input/InputWithRing';
 import UnderlineInput from '@/components/Input/UnderlineInput';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Input Components',

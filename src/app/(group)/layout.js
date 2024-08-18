@@ -1,4 +1,4 @@
-import Sidebar from '@/ui/Sidebar';
+import Sidebar from '@/ui/navigation/Sidebar';
 
 export const metadata = {
     title: { default: 'Components', template: '%s - Navigate UI' },
@@ -11,7 +11,7 @@ export default function ComponentLayout({ children }) {
             <div className="hidden w-full max-w-[20%] justify-self-end lg:block">
                 <Sidebar />
             </div>
-            <div className="w-full py-2 pb-5 lg:w-4/5 xl:w-[80%]">{children}</div>
+            <div className="mt-5 w-full pb-5 pt-2 lg:w-4/5 xl:w-[80%]">{children}</div>
             {/* <div className="xl:w-[20%]"></div> */}
         </div>
     );

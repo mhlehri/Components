@@ -4,7 +4,7 @@ import BoxDropdown from '@/components/DropDown/BoxDropdown';
 import FadeLeftDropdown from '@/components/DropDown/FadeLeftDropdown';
 import FadeUpBoxDropdown from '@/components/DropDown/FadeUpBoxDropdown';
 import FadeUpDropdown from '@/components/DropDown/FadeUpDropdown';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Dropdown Components',

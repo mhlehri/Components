@@ -5,7 +5,24 @@ import { useState } from 'react';
 
 const code = `import { useState } from 'react';
 
-const sliders = [{ img: 'https://source.unsplash.com/1200x540/?snow-fall', title: 'Winter', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },{ img: 'https://source.unsplash.com/1200x540/?Spring', title: 'Spring', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },{ img: 'https://source.unsplash.com/1200x540/?sea-beach', title: 'Summer', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },{ img: 'https://source.unsplash.com/1200x540/?Autumn', title: 'Autumn', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' }];
+const sliders = [
+        {
+            img: 'https://images.unsplash.com/photo-1485433592409-9018e83a1f0d?q=80&w=1814&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Winter'
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1522748906645-95d8adfd52c7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Spring'
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1570299437522-f66ff98d52e7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Summer'
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1667587870757-b2a4a407aeee?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Autumn'
+        }
+    ];
 
 export default function AccordionWithImage2() {
     const [isOpen, setIsOpen] = useState(1);
@@ -28,10 +45,22 @@ export default function AccordionWithImage2() {
 
 export default function AccordionWithImage2(i) {
     const sliders = [
-        { img: 'https://source.unsplash.com/1200x540/?snow-fall', title: 'Winter', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },
-        { img: 'https://source.unsplash.com/1200x540/?Spring', title: 'Spring', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },
-        { img: 'https://source.unsplash.com/1200x540/?sea-beach', title: 'Summer', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },
-        { img: 'https://source.unsplash.com/1200x540/?Autumn', title: 'Autumn', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' }
+        {
+            img: 'https://images.unsplash.com/photo-1485433592409-9018e83a1f0d?q=80&w=1814&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Winter'
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1522748906645-95d8adfd52c7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Spring'
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1570299437522-f66ff98d52e7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Summer'
+        },
+        {
+            img: 'https://images.unsplash.com/photo-1667587870757-b2a4a407aeee?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: 'Autumn'
+        }
     ];
     const [isOpen, setIsOpen] = useState(1);
     const handleToggle = (idx) => setIsOpen((prevIdx) => (prevIdx == idx ? null : idx));

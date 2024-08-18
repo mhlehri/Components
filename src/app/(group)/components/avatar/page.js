@@ -6,7 +6,7 @@ import AvatarWithMaleGenderIcon from '@/components/Avatar/AvatarWithMaleGenderIc
 import CircleAvatar from '@/components/Avatar/CircleAvatar';
 import DisableOfflineAvatar from '@/components/Avatar/DisableOfflineAvatar';
 import SquareAvatar from '@/components/Avatar/SquareAvatar';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Avatar Components',
@@ -25,27 +25,27 @@ const avatarArr = [
     {
         name: 'Active Avatar',
         Comp: ActiveAvatar
-    },
-    {
-        name: 'Avatar with Edit Icon',
-        Comp: AvatarWithEditIcon
-    },
-    {
-        name: 'Avatar with add icon',
-        Comp: AvatarWithAddIcon
-    },
-    {
-        name: 'Disable Offline Avatar',
-        Comp: DisableOfflineAvatar
-    },
-    {
-        name: 'Avatar with male icon',
-        Comp: AvatarWithMaleGenderIcon
-    },
-    {
-        name: 'Avatar with female icon',
-        Comp: AvatarWithFemaleGenderIcon
     }
+    // {
+    //     name: 'Avatar with Edit Icon',
+    //     Comp: AvatarWithEditIcon
+    // },
+    // {
+    //     name: 'Avatar with add icon',
+    //     Comp: AvatarWithAddIcon
+    // },
+    // {
+    //     name: 'Disable Offline Avatar',
+    //     Comp: DisableOfflineAvatar
+    // },
+    // {
+    //     name: 'Avatar with male icon',
+    //     Comp: AvatarWithMaleGenderIcon
+    // },
+    // {
+    //     name: 'Avatar with female icon',
+    //     Comp: AvatarWithFemaleGenderIcon
+    // }
 ];
 
 export default function Avatar() {

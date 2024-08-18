@@ -63,13 +63,13 @@ export default function FileUpload5() {
     };
     return (
         <CP code={code}>
-            <div className="  my-10 ">
+            <div className="w-full max-w-4xl">
                 {showName?.name ? (
-                    <div className=" mx-auto flex max-w-[600px] items-center gap-x-6  rounded-lg border-2 border-dashed border-gray-400 bg-white p-5">
+                    <div className="flex w-full items-center gap-x-6 rounded-lg border-2 border-dashed border-gray-400 bg-white p-5">
                         <Image className="w-full max-w-[150px] rounded-lg object-cover" width={100} height={100} src={showImagePreview} alt={showName?.name} />
                         <div className="flex-1 space-y-1.5 overflow-hidden">
-                            <h5 className=" truncate text-xl font-medium tracking-tight">{showName?.name}</h5>
-                            <p className=" text-gray-500">{(showName.size / 1024).toFixed(1)} KB</p>
+                            <h5 className="truncate text-xl font-medium tracking-tight">{showName?.name}</h5>
+                            <p className="text-gray-500">{(showName.size / 1024).toFixed(1)} KB</p>
                         </div>
                         <div onClick={handleClearFile}>
                             <svg width={30} viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +83,7 @@ export default function FileUpload5() {
                         </div>
                     </div>
                 ) : (
-                    <label className=" mx-auto flex max-w-[600px] flex-col items-center justify-center space-y-3 rounded-lg border-2 border-dashed border-gray-400 bg-white p-6" htmlFor="file5">
+                    <label className="mx-auto flex max-w-[600px] flex-col items-center justify-center space-y-3 rounded-lg border-2 border-dashed border-gray-400 bg-white p-6" htmlFor="file5">
                         <svg
                             width={50}
                             version="1.1"
@@ -107,7 +107,7 @@ export default function FileUpload5() {
                             </g>
                         </svg>
                         <div className="space-y-1.5 text-center">
-                            <h5 className="whitespace-nowrap text-lg font-medium tracking-tight ">Upload your file</h5>
+                            <h5 className="whitespace-nowrap text-lg font-medium tracking-tight">Upload your file</h5>
                             <p className="text-sm text-gray-500">File Should be in PNG, JPEG or JPG formate</p>
                         </div>
                     </label>

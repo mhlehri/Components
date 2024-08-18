@@ -1,6 +1,6 @@
 import Spinner1 from '@/components/Spinner/Spinner1';
-import { Breadcrumb } from '@/ui/Client';
-import { Heading } from '@/ui/Server';
+import Breadcrumb from '@/ui/breadcrumb';
+import Heading from '@/ui/heading';
 
 export const metadata = {
     title: 'Spinner ',

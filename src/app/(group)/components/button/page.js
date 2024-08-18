@@ -1,7 +1,7 @@
 import Button1 from '@/components/Button/Button1';
 import Button2 from '@/components/Button/Button2';
-import { Breadcrumb } from '@/ui/Client';
-import { Heading } from '@/ui/Server';
+import Breadcrumb from '@/ui/breadcrumb';
+import Heading from '@/ui/heading';
 
 export const metadata = {
     title: 'Button Components',

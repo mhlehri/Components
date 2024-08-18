@@ -3,32 +3,32 @@ import { sendGAEvent } from '@next/third-parties/google';
 import { useState } from 'react';
 import { FaCheck, FaRegClipboard } from 'react-icons/fa6';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { brownPaper, codepenEmbed, darcula, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { a11yDark, base16AteliersulphurpoolLight, cb } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 const yourElementStyle = {
     background: 'transparent',
     maxHeight: '500px',
-    borderRadius: '5px',
+    borderRadius: '6px',
     fontSize: 14,
-    border: 0
+    border: 0,
+    margin: 0
 };
-export default function Highlighter({ code }) {
+export default function Highlighter({ code, showLineNumbers, language }) {
     const [isCopied, setIsCopied] = useState(false);
 
     const handleCopy = () => {
         setIsCopied(true);
+        navigator.clipboard.writeText(code);
         setTimeout(() => {
             setIsCopied(false);
-            navigator.clipboard.writeText(code);
-        }, 500);
+        }, 1000);
     };
     return (
-        <div className="layout group relative">
-            <SyntaxHighlighter customStyle={yourElementStyle} className="codebox" showLineNumbers language="jsx" style={a11yDark}>
+        <div className="group relative overflow-hidden rounded-sm">
+            <SyntaxHighlighter customStyle={yourElementStyle} className="codebox" showLineNumbers={showLineNumbers == false ? false : true} language={language ? language : 'jsx'} style={a11yDark}>
                 {code.trim()}
             </SyntaxHighlighter>
-
+            <div className="absolute inset-0 -z-10 overflow-hidden rounded-sm bg-slate-800 backdrop-blur-lg dark:bg-zinc-800"></div>
             <button
                 onClick={() => {
                     handleCopy();
@@ -38,9 +38,9 @@ export default function Highlighter({ code }) {
                         label: 'Copy'
                     });
                 }}
-                className="invisible absolute right-3 top-2 z-50 rounded-md bg-gray-400/20 p-2 hover:bg-[#080808] group-hover:visible dark:bg-slate-500/20 hover:dark:bg-[#080808]"
+                className="invisible absolute right-3 top-2 z-50 rounded-md border border-zinc-500 bg-zinc-500/20 p-2 group-hover:visible dark:bg-slate-500/20"
             >
-                {isCopied ? <FaCheck color="#fff" size={16} /> : <FaRegClipboard color="#fff" size={16} />}
+                {isCopied ? <FaCheck className="text-zinc-400" size={20} /> : <FaRegClipboard className="text-zinc-400" size={20} />}
             </button>
         </div>
     );

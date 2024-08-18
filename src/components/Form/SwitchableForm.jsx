@@ -117,7 +117,7 @@ export default function SwitchableForm(i) {
                     </form>
 
                     {/* signin form */}
-                    <form className={`${signUp ? 'h-0 opacity-0' : 'h-full duration-300'} space-y-3 sm:space-y-5`}>
+                    <form className={`${signUp ? 'invisible h-0 opacity-0' : 'h-full duration-300'} space-y-3 sm:space-y-5`}>
                         <h1 className="mb-3 uppercase sm:mb-5 sm:text-2xl">Sign In</h1>
                         <input type="email" placeholder="Email" className="block w-full rounded-md border p-2.5 outline-none ring-zinc-700 focus:ring-1 dark:border-zinc-700" />
                         <input type="password" placeholder="Password" className="block w-full rounded-md border p-2.5 outline-none ring-zinc-700 focus:ring-1 dark:border-zinc-700" />

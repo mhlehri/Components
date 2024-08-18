@@ -3,9 +3,8 @@ import SimplePagination from '@/components/Pagination/SimplePagination';
 import SquareCardPagination from '@/components/Pagination/SquareCardPagination';
 import SquareCardPagination2 from '@/components/Pagination/SquareCardPagination2';
 import TransParentPagination from '@/components/Pagination/TransParentPagination';
-import { Breadcrumb } from '@/ui/Client';
-import { Heading } from '@/ui/Server';
-import React from 'react';
+import Breadcrumb from '@/ui/breadcrumb';
+import Heading from '@/ui/heading';
 
 export const metadata = {
     title: 'Pagination Components',

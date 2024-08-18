@@ -1,8 +1,9 @@
-import BadgeWithNumber from '@/components/Badge/BadgeWithNumber';
-import BadgeWithNumberBelow from '@/components/Badge/BadgeWithNumberBelow';
-import BadgeWithText from '@/components/Badge/BadgeWithText';
-import SimpleBadge from '@/components/Badge/SimpleBadge';
-import { ComponentPortion } from '@/ui/Server';
+import Badge from '@/components/Badge/Badge';
+import BadgeDot from '@/components/Badge/BadgeDot';
+import BadgeNumber from '@/components/Badge/BadgeNumber';
+import BadgeOutline from '@/components/Badge/BadgeOutline';
+import BadgeWithBorder from '@/components/Badge/BadgeWithBorder';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Badge Components',
@@ -11,20 +12,24 @@ export const metadata = {
 
 const badgeArr = [
     {
-        name: 'Simple Badge',
-        Comp: SimpleBadge
+        name: 'Badge',
+        Comp: Badge
     },
     {
-        name: 'Badge with number',
-        Comp: BadgeWithNumber
+        name: 'Badge Outline',
+        Comp: BadgeOutline
     },
     {
-        name: 'Badge with number below',
-        Comp: BadgeWithNumberBelow
+        name: 'Badge Number',
+        Comp: BadgeNumber
     },
     {
-        name: 'Badge with text',
-        Comp: BadgeWithText
+        name: 'Badge Dot',
+        Comp: BadgeDot
+    },
+    {
+        name: 'Badge with Border',
+        Comp: BadgeWithBorder
     }
 ];
 

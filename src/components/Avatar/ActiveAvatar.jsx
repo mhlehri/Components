@@ -1,50 +1,60 @@
 import CP from '@/ui/CP';
 import Image from 'next/image';
 
-const code = `export default function ActiveAvatar() {
+const code = `
+export default function ActiveAvatar() {
     return (
-        <div className="flex items-center flex-wrap justify-around" id="_ActiveAvatar_NavigateUI">
-        // small
-            <div className="relative group">
-                <img className="size-[80px] bg-slate-500 object-cover rounded-full" src="https://source.unsplash.com/300x300/?profile" alt="avatar navigate ui" />
-                <span className="size-4 bg-green-500 absolute rounded-full bottom-2 right-0 border-[3px] border-white"></span>
-                <span className="size-4 bg-green-500 absolute rounded-full bottom-2 right-0 animate-ping"></span>
-            </div>
-            // medium
-            <div className="relative group">
-                <img className="size-[110px] bg-slate-500 object-cover rounded-full" src="https://source.unsplash.com/300x300/?profile" alt="avatar navigate ui" />
-                <span className="size-5 bg-green-500 absolute rounded-full bottom-3 right-0 border-[3px] border-white"></span>
-                <span className="size-5 bg-green-500 absolute rounded-full bottom-3 right-0 animate-ping"></span>
-            </div>
-            // large
-            <div className="relative group">
-                <img className="size-[130px] bg-slate-500 object-cover rounded-full" src="https://source.unsplash.com/300x300/?profile" alt="avatar navigate ui" />
-                <span className="size-5 bg-green-500 absolute rounded-full bottom-5 right-0 border-[3px] border-white"></span>
-                <span className="size-5 bg-green-500 absolute rounded-full bottom-5 right-0 animate-ping"></span>
-            </div>
+        <div className="relative">
+            <img
+                width={500}
+                height={500}
+                className="size-10 rounded-full bg-slate-500 object-cover"
+                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop"
+                alt="avatar navigate ui"
+            />
+            <span className="absolute bottom-[2px] right-0 size-3 rounded-full border-[2px] border-white bg-green-500"></span>
         </div>
-    );
-};
+    )
+}
 `;
 
 export default function ActiveAvatar(i) {
     return (
         <CP code={code} i={i}>
-            <div className="flex w-full flex-wrap items-center justify-evenly">
-                <div className="group relative">
-                    <Image width={80} height={80} className="size-[80px] rounded-full bg-slate-500 object-cover" src="https://source.unsplash.com/300x300/?profile" alt="avatar navigate ui" />
-                    <span className="absolute bottom-2 right-0 size-4 rounded-full border-[3px] border-white bg-green-500"></span>
-                    <span className="absolute bottom-2 right-0 size-4 animate-ping rounded-full bg-green-500"></span>
+            <div className="flex gap-10 *:h-fit">
+                <div className="relative">
+                    <Image
+                        width={500}
+                        height={500}
+                        className="size-10 rounded-full bg-slate-500 object-cover"
+                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop"
+                        alt="avatar navigate ui"
+                    />
+                    <span className="absolute bottom-[2px] right-0 size-3 rounded-full border-[2px] border-white bg-green-500"></span>
+                </div>
+                <div className="relative">
+                    <Image
+                        width={500}
+                        height={500}
+                        className="size-12 rounded-full bg-slate-500 object-cover"
+                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop"
+                        alt="avatar navigate ui"
+                    />
+                    <span className="absolute bottom-[2px] right-0 size-3 rounded-full border-[2px] border-white bg-green-500">
+                        <span className="size-3 animate-ping rounded-full bg-green-500"></span>
+                    </span>
                 </div>
                 <div className="group relative">
-                    <Image width={110} height={110} className="size-[110px] rounded-full bg-slate-500 object-cover" src="https://source.unsplash.com/300x300/?profile" alt="avatar navigate ui" />
-                    <span className="absolute bottom-3 right-0 size-5 rounded-full border-[3px] border-white bg-green-500"></span>
-                    <span className="absolute bottom-3 right-0 size-5 animate-ping rounded-full bg-green-500"></span>
-                </div>
-                <div className="group relative">
-                    <Image width={130} height={130} className="size-[130px] rounded-full bg-slate-500 object-cover" src="https://source.unsplash.com/300x300/?profile" alt="avatar navigate ui" />
-                    <span className="absolute bottom-5 right-0 size-5 rounded-full border-[3px] border-white bg-green-500"></span>
-                    <span className="absolute bottom-5 right-0 size-5 animate-ping rounded-full bg-green-500"></span>
+                    <Image
+                        width={500}
+                        height={500}
+                        className="size-14 rounded-full bg-slate-500 object-cover"
+                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop"
+                        alt="avatar navigate ui"
+                    />
+                    <span className="absolute bottom-[2px] right-0 size-3 rounded-full border-[2px] border-white bg-green-500">
+                        <span className="size-3 animate-ping rounded-full bg-green-500"></span>
+                    </span>
                 </div>
             </div>
         </CP>

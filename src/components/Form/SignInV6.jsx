@@ -64,7 +64,7 @@ export default function SignInV6() {
 export default function SignInV6(i) {
     return (
         <CP code={code} i={i}>
-            <div className="flex h-full items-center justify-center md:p-0">
+            <div className="flex w-full items-center justify-center md:p-0">
                 <div className="flex h-full w-full overflow-hidden rounded-xl shadow-md">
                     {/* design side  */}
                     <div className="relative hidden items-center justify-center bg-blue-300 md:flex md:w-[50%]">

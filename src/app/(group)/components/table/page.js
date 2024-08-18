@@ -1,8 +1,8 @@
 import Table1 from '@/components/Table/Table1';
 import Table2 from '@/components/Table/Table2';
 import Table3 from '@/components/Table/Table3';
-import { Breadcrumb } from '@/ui/Client';
-import { Heading } from '@/ui/Server';
+import Breadcrumb from '@/ui/breadcrumb';
+import Heading from '@/ui/heading';
 
 export const metadata = {
     title: 'Table Components',

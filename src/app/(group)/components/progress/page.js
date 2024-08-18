@@ -4,7 +4,7 @@ import OutsidePercentageProgress from '@/components/Progress/OutsidePercentagePr
 import CircleProgress from '@/components/Progress/CircleProgress';
 import StaticProgress from '@/components/Progress/StaticProgress';
 import StaticWithPercentage from '@/components/Progress/StaticWithPercentage';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Progress Components',

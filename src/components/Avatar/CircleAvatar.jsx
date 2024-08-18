@@ -1,42 +1,44 @@
 import CP from '@/ui/CP';
 import Image from 'next/image';
 
-const code = `export default function CircleAvatar() {
+const code = `
+export default function Avatar() {
     return (
-        // you can remove the blur by removing hover:blur-[2px] duration-500 these classes 
-        <div className="flex flex-wrap justify-between">
-            <img className="size-[80px] bg-slate-500 object-cover rounded-lg hover:blur-[2px] duration-500" src="https://source.unsplash.com/300x300/?profile" alt="avatar navigate ui" />
-            <img className="size-[110px] bg-slate-500 object-cover rounded-lg hover:blur-[2px] duration-500" src="https://source.unsplash.com/300x300/?profile" alt="avatar navigate ui" />
-            <img className="size-[130px] bg-slate-500 object-cover rounded-lg hover:blur-[2px] duration-500" src="https://source.unsplash.com/300x300/?profile" alt="avatar navigate ui" />
-        </div>
+        <img
+            width={500}
+            height={500}
+            className="size-10 rounded-full bg-slate-500 object-cover"
+            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop"
+            alt="avatar navigate ui"
+        />
     );
-};
+}
 `;
 
 export default function CircleAvatar(i) {
     return (
         // you can remove the blur by removing hover:blur-[2px] duration-500 these classes
         <CP code={code} i={i}>
-            <div className="flex w-full flex-wrap items-center justify-evenly">
+            <div className="flex gap-10">
                 <Image
-                    width={80}
-                    height={80}
-                    className="size-[80px] rounded-full bg-slate-500 object-cover duration-500 hover:blur-[2px]"
-                    src="https://source.unsplash.com/300x300/?profile"
+                    width={500}
+                    height={500}
+                    className="size-10 rounded-full bg-slate-500 object-cover"
+                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop"
                     alt="avatar navigate ui"
                 />
                 <Image
-                    width={110}
-                    height={110}
-                    className="size-[110px] rounded-full bg-slate-500 object-cover duration-500 hover:blur-[2px]"
-                    src="https://source.unsplash.com/300x300/?profile"
+                    width={500}
+                    height={500}
+                    className="size-12 rounded-full bg-slate-500 object-cover"
+                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop"
                     alt="avatar navigate ui"
                 />
                 <Image
-                    width={130}
-                    height={130}
-                    className="size-[130px] rounded-full bg-slate-500 object-cover duration-500 hover:blur-[2px]"
-                    src="https://source.unsplash.com/300x300/?profile"
+                    width={500}
+                    height={500}
+                    className="size-14 rounded-full bg-slate-500 object-cover"
+                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop"
                     alt="avatar navigate ui"
                 />
             </div>

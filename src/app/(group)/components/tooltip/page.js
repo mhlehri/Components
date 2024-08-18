@@ -2,7 +2,7 @@ import TooltipBottom from '@/components/Tooltip/TooltipBottom';
 import TooltipLeft from '@/components/Tooltip/TooltipLeft';
 import TooltipRight from '@/components/Tooltip/TooltipRight';
 import TooltipTop from '@/components/Tooltip/TooltipTop';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Tooltip Components',

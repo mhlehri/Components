@@ -4,8 +4,8 @@ import Modal3 from '@/components/Modal/Modal3';
 import Modal4 from '@/components/Modal/Modal4';
 import Modal5 from '@/components/Modal/Modal5';
 import Modal6 from '@/components/Modal/Modal6';
-import { Breadcrumb } from '@/ui/Client';
-import { Heading } from '@/ui/Server';
+import Breadcrumb from '@/ui/breadcrumb';
+import Heading from '@/ui/heading';
 
 export const metadata = {
     title: 'Modal Components',
@@ -18,7 +18,7 @@ export default function ModalPage() {
             <Breadcrumb />
             <Heading>Explore The Modal Collections</Heading>
             <Modal1 />
-            <Modal2 />
+            {/* <Modal2 /> */}
             <Modal3 />
             <Modal4 />
             <Modal5 />

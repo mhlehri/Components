@@ -1,15 +1,15 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { RiBookmark2Fill, RiBookmark2Line } from 'react-icons/ri';
 import { addBookmark, getBookmarkById, removeBookmark } from './Client';
-import Highlighter from './Highlighter';
+import Highlighter from './CodeSnippet';
 
 export default function CP({ children, code, i }) {
     const [tabNum, setTabNum] = useState(0);
     const [bookmarked, setBookmarked] = useState(false);
-    // const ref = useRef();
     const url = usePathname();
+    const ref = useRef(null);
     const cat = url?.includes('components') ? 'components' : 'blocks';
 
     const info = {
@@ -21,44 +21,45 @@ export default function CP({ children, code, i }) {
         {
             item: 0,
             name: 'Preview',
-            component: <div className="min-w-80 p-5 lg:p-10">{children}</div>
+            component: (
+                <div ref={ref} className="min-w-80 rounded-sm border border-zinc-200 p-5 lg:p-10 dark:border-zinc-800">
+                    {children}
+                </div>
+            )
         },
         {
             item: 1,
-            name: 'React',
+            name: 'Code',
             component: <Highlighter code={code} />
         }
     ];
     useEffect(() => {
         const bookmarkInfo = getBookmarkById(cat, i?.name);
-        // console.log(bookmarkInfo);
         if (bookmarkInfo) {
             setBookmarked(bookmarkInfo?.name === i?.name);
         }
     }, [cat, i]);
 
-    // const { width } = ref?.current?.getBoundingClientRect() || 20;
-    // console.log(width);
-
     return (
-        <div className="relative my-5 h-fit w-full min-w-80">
+        <div className="my-5 h-fit w-full min-w-80 max-w-5xl">
             <div className="item-center mb-2 flex justify-between gap-2">
                 <div className="flex w-full items-center justify-between">
-                    <div className={`item-center ${tabNum === 1 ? 'border-sky-500' : 'border-zinc-600 dark:border-zinc-800'} relative flex overflow-hidden rounded-sm border duration-300`}>
+                    <div
+                        className={`item-center shadow-inner ${tabNum === 1 ? 'border-red-600' : 'border-zinc-200 dark:border-zinc-800'} relative flex overflow-hidden rounded-sm border duration-300`}
+                    >
                         <div
-                            className={`absolute z-30 flex h-9 w-20 items-center ${tabNum === 1 ? 'bg-sky-500' : 'bg-zinc-600 dark:bg-zinc-800'} duration-300`}
+                            className={`absolute z-30 flex h-9 w-20 items-center ${tabNum === 1 ? 'bg-red-600' : 'bg-zinc-200 dark:bg-zinc-800'} duration-300`}
                             style={{ transform: `translateX(${tabNum * 101}%)` }}
                         ></div>
 
                         <button
-                            // ref={ref}
                             onClick={() => setTabNum(0)}
-                            className={`z-40 w-20 cursor-pointer select-none px-3 py-2 text-center text-sm ${tabNum === 0 ? 'text-white' : 'text-black dark:text-white'} `}
+                            className={`z-40 w-20 cursor-pointer select-none px-3 py-2 text-center text-sm ${tabNum === 0 ? 'text-whie' : 'text-black dark:text-white'} `}
                         >
                             Preview
                         </button>
                         <button onClick={() => setTabNum(1)} className={`z-40 w-20 cursor-pointer select-none px-3 py-2 text-sm ${tabNum === 1 ? 'text-white' : 'text-black dark:text-white'} `}>
-                            React
+                            Code
                         </button>
                     </div>
                     {i && (
@@ -85,12 +86,7 @@ export default function CP({ children, code, i }) {
                 </div>
             </div>
 
-            <div className={`relative mb-20 rounded-sm`}>
-                <div
-                    className={`absolute inset-0 -z-50 overflow-hidden rounded-sm backdrop-blur-lg ${tabNum === 1 ? 'bg-slate-800 dark:bg-zinc-50/10' : 'border border-gray-300/80 bg-zinc-300/5 dark:border-gray-50/10'}`}
-                ></div>{' '}
-                {totalConfig[tabNum].component}
-            </div>
+            <div className={`mb-20 rounded-sm`}>{totalConfig[tabNum].component}</div>
         </div>
     );
 }

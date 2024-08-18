@@ -1,7 +1,7 @@
 import BasicSwitchWithPeer from '@/components/Switch/BasicSwitchWithPeer';
 import BasicSwitchWithState from '@/components/Switch/BasicSwitchWithState';
-import { Breadcrumb } from '@/ui/Client';
-import { Heading } from '@/ui/Server';
+import Breadcrumb from '@/ui/breadcrumb';
+import Heading from '@/ui/heading';
 
 export default function page() {
     return (

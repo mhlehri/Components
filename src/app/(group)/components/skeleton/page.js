@@ -5,7 +5,7 @@ import Skeleton4 from '@/components/Skeleton/Skeleton4';
 import Skeleton5 from '@/components/Skeleton/Skeleton5';
 import Skeleton6 from '@/components/Skeleton/Skeleton6';
 import Skeleton7 from '@/components/Skeleton/Skeleton7';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Skeleton Components',

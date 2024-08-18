@@ -5,82 +5,177 @@ import Image from 'next/image';
 
 const code = `import { useEffect, useState } from 'react';
 
-export const Carousel6 = () => {
+const data = [
+      {
+          img: 'https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?q=80&w=2071&auto=format&fit=crop',
+          title: 'Forest Serenity',
+          des: 'Discover the peace and beauty of the forest. A perfect place to escape the everyday hustle and reconnect with nature.'
+      },
+      {
+          img: 'https://images.unsplash.com/photo-1508873881324-c92a3fc536ba?q=80&w=2070&auto=format&fit=crop',
+          title: 'Golden Canopy',
+          des: 'Bask in the warmth and beauty of the golden leaves against a clear blue sky. A perfect spot for a peaceful retreat and reflection.'
+      },
+      {
+          img: 'https://images.unsplash.com/photo-1719749990914-a3ba54e6343f?q=80&w=2072&auto=format&fit=crop',
+          title: 'Urban Exploration',
+          des: 'Venture into the hidden corners of the city and uncover the beauty of forgotten urban landscapes. A thrilling escape into the depths of urban architecture.'
+      },
+      {
+          img: 'https://images.unsplash.com/photo-1467195468637-72eb862bb14e?q=80&w=2071&auto=format&fit=crop',
+          title: 'Industrial Mystery',
+          des: 'Explore the enigmatic charm of industrial structures. A perfect setting for those with a sense of adventure and an eye for urban beauty.'
+      },
+      {
+          img: 'https://images.unsplash.com/photo-1532155297578-a43684be8db8?q=80&w=2071&auto=format&fit=crop',
+          title: 'Blossom Bliss',
+          des: 'Revel in the vibrant colors and delicate petals of a blossoming field. An ideal retreat for those seeking a burst of natural beauty and serenity.'
+      }
+];
+
+export default function Carousel6 () {
     const [currentSlider, setCurrentSlider] = useState(0);
-    const sliders = [{ img: 'https://source.unsplash.com/1200x540/?nature', title: 'Escape 1', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },{ img: 'https://source.unsplash.com/1200x540/?hill', title: 'Escape 2', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },{ img: 'https://source.unsplash.com/1200x540/?mountain', title: 'Escape 3', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },{ img: 'https://source.unsplash.com/1200x540/?river', title: 'Escape 4', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },{ img: 'https://source.unsplash.com/1200x540/?sea', title: 'Escape 5', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' }];
+
     // if you don't want to change the slider automatically then you can just remove the useEffect
     useEffect(() => {
-        const intervalId = setInterval(() => setCurrentSlider(currentSlider === sliders.length - 1 ? 0 : currentSlider + 1), 5000);
+        const intervalId = setInterval(() => setCurrentSlider(currentSlider === data.length - 1 ? 0 : currentSlider + 1), 5000);
         return () => clearInterval(intervalId);
     }, [currentSlider]);
 
     return (
-        <div className="flex flex-row-reverse justify-between">
-            <div className="w-full h-72 sm:h-96 md:h-[540px] flex flex-col items-center justify-center gap-5 lg:gap-10 bg-cover bg-center before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear rounded-lg overflow-hidden"
-                style={{ backgroundImage: \`url(\${sliders[currentSlider].img})\`}}>
-                {/* text container here */}
-                <div className="drop-shadow-lg text-white text-center px-5">
-                    <h1 className="text-xl lg:text-3xl font-semibold mb-3">{sliders[currentSlider].title}</h1>
-                    <p className="text-sm md:text-base lg:text-lg">{sliders[currentSlider].des}</p>
-                </div>
-            </div>
-            {/* slider container */}
-            <div className="flex flex-col justify-center items-center gap-3 p-2">
-                {/* sliders */}
-                {sliders.map((slide, inx) => (<img onClick={() => setCurrentSlider(inx)} key={inx}
-                        src={slide.img} className={\`w-10 md:w-20 h-6 sm:h-8 md:h-12 bg-black/20 \${currentSlider === inx ? 'border-2 border-black p-px' : ''} rounded-md md:rounded-lg box-content cursor-pointer\`}
-                        alt={slide.title}/>
-                ))}
-            </div>
-        </div>
+          <div className="flex flex-row-reverse justify-between">
+              <div className="h-72 w-full transform overflow-hidden rounded-lg before:bg-black/50 sm:h-96 md:h-[540px] lg:gap-10">
+                  {data.map((slide, index) => {
+                      const { img, title, des } = slide;
+                      return (
+                          <div className={\`\${index === currentSlider ? 'visible opacity-100' : 'invisible opacity-0'} absolute inset-0 duration-500 ease-linear\`} key={\`index_\${index}\`}>
+                              <img
+                                  src={img}
+                                  width="1200"
+                                  height="600"
+                                  alt={title}
+                                  className={\`h-full w-full object-cover duration-500 ease-linear \${index === currentSlider ? 'scale-100' : 'scale-105'}\`}
+                              />
+                              <div className="absolute inset-0 flex flex-col bg-black/40 p-5 text-center text-white drop-shadow-lg">
+                                  <div className="mb-0 mt-auto rounded-md bg-white/40 p-3 backdrop-blur-3xl">
+                                      <div className="mb-3 overflow-hidden text-xl font-semibold lg:text-3xl">
+                                          <h1 className={\`\${index === currentSlider ? '' : 'translate-y-12'} duration-500 ease-linear\`}>{title}</h1>
+                                      </div>
+                                      <div className="overflow-hidden text-sm md:text-base lg:text-lg">
+                                          <p className={\`\${index === currentSlider ? '' : '-translate-y-12'} duration-500 ease-linear\`}>{des}</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      );
+                  })}
+              </div>
+              {/* slider container */}
+              <div className="flex flex-col items-center justify-center gap-3 p-2">
+                  {data.map((slide, index) => {
+                      const { img, title } = slide;
+                      return (
+                          <img
+                              key={index}
+                              src={img}
+                              width={1200}
+                              height={600}
+                              className={\`h-6 w-10 bg-black/20 sm:h-8 md:h-12 md:w-20 \${currentSlider === index ? 'opacity-100 ring ring-sky-500' : 'opacity-60'} box-content cursor-pointer rounded-md md:rounded-lg\`}
+                              alt={title}
+                              onClick={() => setCurrentSlider(index)}
+                          />
+                      );
+                  })}
+              </div>
+          </div>
     );
 };
 `;
 
-export const Carousel6 = () => {
-  const [currentSlider, setCurrentSlider] = useState(0);
-  const sliders = [
-    { img: 'https://source.unsplash.com/1200x540/?nature', title: 'Escape 1', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },
-    { img: 'https://source.unsplash.com/1200x540/?hill', title: 'Escape 2', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },
-    { img: 'https://source.unsplash.com/1200x540/?mountain', title: 'Escape 3', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },
-    { img: 'https://source.unsplash.com/1200x540/?river', title: 'Escape 4', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' },
-    { img: 'https://source.unsplash.com/1200x540/?sea', title: 'Escape 5', des: 'A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement.' }
-  ];
-  // if you don't want to change the slider automatically then you can just remove the useEffect
-  useEffect(() => {
-    const intervalId = setInterval(() => setCurrentSlider(currentSlider === sliders.length - 1 ? 0 : currentSlider + 1), 5000);
-    return () => clearInterval(intervalId);
-  }, [currentSlider, sliders.length]);
+const data = [
+    {
+        img: 'https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?q=80&w=2071&auto=format&fit=crop',
+        title: 'Forest Serenity',
+        des: 'Discover the peace and beauty of the forest. A perfect place to escape the everyday hustle and reconnect with nature.'
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1508873881324-c92a3fc536ba?q=80&w=2070&auto=format&fit=crop',
+        title: 'Golden Canopy',
+        des: 'Bask in the warmth and beauty of the golden leaves against a clear blue sky. A perfect spot for a peaceful retreat and reflection.'
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1719749990914-a3ba54e6343f?q=80&w=2072&auto=format&fit=crop',
+        title: 'Urban Exploration',
+        des: 'Venture into the hidden corners of the city and uncover the beauty of forgotten urban landscapes. A thrilling escape into the depths of urban architecture.'
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1467195468637-72eb862bb14e?q=80&w=2071&auto=format&fit=crop',
+        title: 'Industrial Mystery',
+        des: 'Explore the enigmatic charm of industrial structures. A perfect setting for those with a sense of adventure and an eye for urban beauty.'
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1532155297578-a43684be8db8?q=80&w=2071&auto=format&fit=crop',
+        title: 'Blossom Bliss',
+        des: 'Revel in the vibrant colors and delicate petals of a blossoming field. An ideal retreat for those seeking a burst of natural beauty and serenity.'
+    }
+];
 
-  return (
-    <CP code={code}>
-      <div className="flex flex-row-reverse justify-between">
-        <div
-          className="flex h-72 w-full transform flex-col items-center justify-center gap-5 overflow-hidden rounded-lg bg-cover bg-center duration-1000 ease-linear before:absolute before:inset-0 before:bg-black/50 sm:h-96 md:h-[540px] lg:gap-10"
-          style={{ backgroundImage: `url(${sliders[currentSlider].img})` }}
-        >
-          {/* text container here */}
-          <div className="px-5 text-center text-white drop-shadow-lg">
-            <h1 className="mb-3 text-xl font-semibold lg:text-3xl">{sliders[currentSlider].title}</h1>
-            <p className="text-sm md:text-base lg:text-lg">{sliders[currentSlider].des}</p>
-          </div>
-        </div>
-        {/* slider container */}
-        <div className="flex flex-col items-center justify-center gap-3 p-2">
-          {/* sliders */}
-          {sliders.map((slide, inx) => (
-            <Image
-              width={1200}
-              height={540}
-              onClick={() => setCurrentSlider(inx)}
-              key={inx}
-              src={slide.img}
-              className={`h-6 w-10 bg-black/20 sm:h-8 md:h-12 md:w-20 ${currentSlider === inx ? 'border-2 border-black p-px' : ''} box-content cursor-pointer rounded-md md:rounded-lg`}
-              alt={slide.title}
-            />
-          ))}
-        </div>
-      </div>
-    </CP>
-  );
-};
+export default function Carousel6() {
+    const [currentSlider, setCurrentSlider] = useState(0);
+
+    // if you don't want to change the slider automatically then you can just remove the useEffect
+    useEffect(() => {
+        const intervalId = setInterval(() => setCurrentSlider(currentSlider === data.length - 1 ? 0 : currentSlider + 1), 5000);
+        return () => clearInterval(intervalId);
+    }, [currentSlider]);
+
+    return (
+        <CP code={code}>
+            <div className="flex flex-row-reverse justify-between">
+                <div className="h-72 w-full transform overflow-hidden rounded-lg before:bg-black/50 sm:h-96 md:h-[540px] lg:gap-10">
+                    {data.map((slide, index) => {
+                        const { img, title, des } = slide;
+                        return (
+                            <div className={`${index === currentSlider ? 'visible opacity-100' : 'invisible opacity-0'} absolute inset-0 duration-500 ease-linear`} key={`index_${index}`}>
+                                <Image
+                                    src={img}
+                                    width="1200"
+                                    height="600"
+                                    alt={title}
+                                    className={`h-full w-full object-cover duration-500 ease-linear ${index === currentSlider ? 'scale-100' : 'scale-105'}`}
+                                />
+                                <div className="absolute inset-0 flex flex-col bg-black/40 p-5 text-center text-white drop-shadow-lg">
+                                    <div className="mb-0 mt-auto rounded-md bg-white/40 p-3 backdrop-blur-3xl">
+                                        <div className="mb-3 overflow-hidden text-xl font-semibold lg:text-3xl">
+                                            <h1 className={`${index === currentSlider ? '' : 'translate-y-12'} duration-500 ease-linear`}>{title}</h1>
+                                        </div>
+                                        <div className="overflow-hidden text-sm md:text-base lg:text-lg">
+                                            <p className={`${index === currentSlider ? '' : '-translate-y-12'} duration-500 ease-linear`}>{des}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+                {/* slider container */}
+                <div className="flex flex-col items-center justify-center gap-3 p-2">
+                    {data.map((slide, index) => {
+                        const { img, title } = slide;
+                        return (
+                            <Image
+                                onClick={() => setCurrentSlider(index)}
+                                src={img}
+                                key={index}
+                                width={1200}
+                                height={600}
+                                className={`h-6 w-10 bg-black/20 sm:h-8 md:h-12 md:w-20 ${currentSlider === index ? 'opacity-100 ring ring-sky-500' : 'opacity-60'} box-content cursor-pointer rounded-md md:rounded-lg`}
+                                alt={title}
+                            />
+                        );
+                    })}
+                </div>
+            </div>
+        </CP>
+    );
+}

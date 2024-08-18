@@ -12,7 +12,7 @@ return (
                 </div>
                 <button className="rounded-xl bg-[#0095FF] px-3 py-1 font-medium text-white duration-200 hover:bg-[#0095FF]/90">30% off</button>
             </div>
-            <img width={260} height={260} className="h-full w-full rounded-lg bg-black/40" src="https://source.unsplash.com/260x260/?macbook" alt="card navigate ui" />
+            <img width={400} height={400} className="rounded-lg bg-black/40 object-cover" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="card navigate ui" />
         </div>
         <div className="space-y-2 font-semibold">
             <h6 className="text-sm md:text-base lg:text-lg">Product Name</h6>
@@ -46,7 +46,13 @@ export default function ProductCard2(i) {
                         </div>
                         <button className="rounded-full bg-sky-400/50 px-3 py-1 text-sm text-white duration-200 hover:bg-sky-400">30% off</button>
                     </div>
-                    <Image width={260} height={260} className="h-full w-full rounded-lg bg-black/40" src="https://source.unsplash.com/260x260/?macbook" alt="card navigate ui" />
+                    <Image
+                        width={400}
+                        height={400}
+                        className="rounded-lg bg-black/40 object-cover"
+                        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="card navigate ui"
+                    />
                 </div>
                 <div className="space-y-2">
                     <h6 className="text-sm font-semibold md:text-base lg:text-lg">Product Name</h6>

@@ -1,7 +1,7 @@
 import LoveRating from '@/components/Rating/LoveRating';
 import RateOnClick from '@/components/Rating/RateOnClick';
 import RateOnHover from '@/components/Rating/RateOnHover';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 export const metadata = {
     title: 'Rating Components',
     description: 'Rating tailwind components'

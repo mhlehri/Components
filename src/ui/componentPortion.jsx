@@ -1,17 +1,10 @@
-import { Breadcrumb } from './Client';
-
-export function Heading({ children, id }) {
-    return (
-        <h1 className="text-lg font-semibold text-black sm:text-xl lg:text-3xl dark:text-white" id={id}>
-            {children}
-            {/* <hr className="mt-2 dark:border-zinc-800" /> */}
-        </h1>
-    );
-}
+import Link from 'next/link';
+import Heading from './heading';
+import Breadcrumb from './breadcrumb';
 
 export function ComponentPortion({ arr }) {
     return (
-        <div className="flex">
+        <div className="flex justify-between">
             <div className="w-full xl:w-[80%]">
                 <Breadcrumb />
                 {arr?.map((data) => {
@@ -25,16 +18,16 @@ export function ComponentPortion({ arr }) {
                     );
                 })}
             </div>
-            <div className="sticky top-16 hidden h-fit w-full text-end text-sm xl:block xl:w-[20%]">
-                <h6 className="font-semibold">On this Page</h6>
+            <div className="sticky top-20 hidden h-fit w-full space-y-2 text-sm xl:block xl:w-[15%]">
+                <h6 className="mb-3 font-medium">On this Page</h6>
                 {arr?.map((data) => {
                     const { name } = data;
                     const id = name?.split(' ').join('-').toLowerCase();
                     return (
-                        <span key={`on_this_page_${id}`} className="mt-1 block text-sm">
-                            <a href={`#${id}`} className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white">
+                        <span key={`on_this_page_${id}`} className="block text-sm">
+                            <Link href={`#${id}`} className="text-slate-500 hover:text-black dark:text-zinc-400 dark:hover:text-white">
                                 {name}
-                            </a>
+                            </Link>
                         </span>
                     );
                 })}

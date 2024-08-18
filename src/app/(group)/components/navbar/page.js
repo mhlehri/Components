@@ -4,7 +4,7 @@ import { NavBar4 } from '@/components/NavBar/NavBar4';
 import { NavBar5 } from '@/components/NavBar/NavBar5';
 import { NavBar6 } from '@/components/NavBar/NavBar6';
 import NavbarWithDropdown from '@/components/NavBar/NavbarWithDropdown';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Navbar Components',

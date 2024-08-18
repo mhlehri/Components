@@ -13,7 +13,7 @@ const code = `export default function ProfileCard ()  {
   return (
         <div className="flex max-w-[350px] flex-col items-center justify-center space-y-4 rounded-xl bg-white p-8 shadow-lg dark:bg-[#18181B]">
             <div className="group relative">
-                <img width={110} height={110} className="h-[110px] w-[110px] rounded-full bg-slate-500 object-cover" src="https://source.unsplash.com/300x300/?profile" alt="card navigate ui" />
+                <img width={110} height={110} className="h-[110px] w-[110px] rounded-full bg-slate-500 object-cover" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop" alt="card navigate ui" />
                 <span className="absolute bottom-3 right-0 h-5 w-5 rounded-full border-[3px] border-white bg-green-500 dark:border-[#18181B]"></span>
                 <span className="absolute bottom-3 right-0 h-5 w-5 animate-ping rounded-full bg-green-500"></span>
             </div>
@@ -202,7 +202,13 @@ export default function ProfileCard(i) {
         <CP code={code} i={i}>
             <div className="mx-auto flex max-w-[350px] flex-col items-center justify-center space-y-4 rounded-xl bg-white p-8 shadow-lg dark:bg-[#18181B]">
                 <div className="group relative">
-                    <Image width={110} height={110} className="h-[110px] w-[110px] rounded-full bg-slate-500 object-cover" src="https://source.unsplash.com/300x300/?profile" alt="card navigate ui" />
+                    <Image
+                        width={110}
+                        height={110}
+                        className="h-[110px] w-[110px] rounded-full bg-slate-500 object-cover"
+                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop"
+                        alt="card navigate ui"
+                    />
                     <span className="absolute bottom-3 right-0 h-5 w-5 rounded-full border-[3px] border-white bg-green-500 dark:border-[#18181B]"></span>
                     <span className="absolute bottom-3 right-0 h-5 w-5 animate-ping rounded-full bg-green-500"></span>
                 </div>
@@ -219,7 +225,7 @@ export default function ProfileCard(i) {
                         <p className="text-gray-500 dark:text-white/70">Following</p>
                         <p className="font-mono text-xl text-gray-700 dark:text-white/50">250</p>
                     </div>
-                    <div className="space-y-1 text-center ">
+                    <div className="space-y-1 text-center">
                         <p className="text-gray-500 dark:text-white/70">Followers</p>
                         <p className="font-mono text-xl text-gray-700 dark:text-white/50">11</p>
                     </div>
@@ -229,7 +235,7 @@ export default function ProfileCard(i) {
                 {/* social icons  */}
                 <div className="flex justify-between gap-4 py-2">
                     {svgArr?.map((svg, idx) => (
-                        <div key={idx} className="rounded-full shadow-[0px_2px_8px_0px_rgba(99,99,99,0.4)]  duration-300 hover:scale-150">
+                        <div key={idx} className="rounded-full shadow-[0px_2px_8px_0px_rgba(99,99,99,0.4)] duration-300 hover:scale-150">
                             {svg?.svg}
                         </div>
                     ))}

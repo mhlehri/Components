@@ -1,3 +1,4 @@
+import BoxAccordion from '@/components/Accordion/BoxAccordion';
 import AccordionWithImage from '@/components/Accordion/AccordionWithImage';
 import AccordionWithImage2 from '@/components/Accordion/AccordionWithImage2';
 import AccordionWithIndex from '@/components/Accordion/AccordionWithIndex';
@@ -7,7 +8,7 @@ import DrawerAccordion from '@/components/Accordion/DrawerAccordion';
 import MenuAccordion from '@/components/Accordion/MenuAccordion';
 import VerticalAccordion from '@/components/Accordion/VerticalAccordion';
 import VerticalMenuAccordion from '@/components/Accordion/VerticalMenuAccordion';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Accordion Components',
@@ -18,6 +19,10 @@ const accordionArr = [
     {
         name: 'Basic Accordion',
         Comp: BasicAccordion
+    },
+    {
+        name: 'Box Accordion',
+        Comp: BoxAccordion
     },
     {
         name: 'Accordion With index',

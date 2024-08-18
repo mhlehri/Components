@@ -5,7 +5,7 @@ import Footer4 from '@/components/Footer/Footer4';
 import Footer5 from '@/components/Footer/Footer5';
 import Footer6 from '@/components/Footer/Footer6';
 import Footer7 from '@/components/Footer/Footer7';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Footer Components',

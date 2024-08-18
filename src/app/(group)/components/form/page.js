@@ -7,7 +7,7 @@ import SignInV5 from '@/components/Form/SignInV5';
 import SignInV6 from '@/components/Form/SignInV6';
 import SignUp from '@/components/Form/SignUp';
 import SwitchableForm from '@/components/Form/SwitchableForm';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Form Components',

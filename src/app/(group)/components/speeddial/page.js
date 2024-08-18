@@ -4,7 +4,7 @@ import SpeedDial3 from '@/components/SpeedDial/SpeedDial3';
 import SpeedDial4 from '@/components/SpeedDial/SpeedDial4';
 import SpeedDial5 from '@/components/SpeedDial/SpeedDial5';
 import SpeedDial6 from '@/components/SpeedDial/SpeedDial6';
-import { Heading } from '@/ui/Server';
+import Heading from '@/ui/heading';
 
 export const metadata = {
     title: 'Speed Dial Components',
@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function SpeedDialPage() {
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div>
             <Heading>Explore The SpeedDials Collections</Heading>
             <SpeedDial1 />
             <SpeedDial2 />

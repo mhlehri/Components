@@ -9,9 +9,9 @@ import { useState } from 'react';
 export default function ProductCardWithRating() {
     const [userRating, setUserRating] = useState(1);
     return (
-      <div className="max-[350px] space-y-6 rounded-2xl bg-slate-100/70 px-6 py-4 shadow-md dark:bg-[#18181B] md:w-[350px]">
+      <div className="max-[350px] mx-auto space-y-4 rounded border p-6 md:w-[350px] dark:border-zinc-700 dark:bg-zinc-900">
         {/* Card Image */}
-        <img width={350} height={190} className="h-[190px] w-[350px] rounded-2xl bg-gray-400" src={'https://source.unsplash.com/350x190/?furniture'} alt="card navigate ui" />
+        <img width={350} height={190} className="h-[190px] w-[350px] rounded-2xl bg-gray-400" src="https://images.unsplash.com/photo-1489269637500-aa0e75768394?q=80&w=2041&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="card navigate ui" />
         {/* Card Heading */}
         <div className="space-y-2">
             <h2 className="font-medium text-slate-800 sm:text-lg md:text-xl dark:text-white/90">Stylish chair</h2>
@@ -41,12 +41,18 @@ export default function ProductCard4(i) {
     const [userRating, setUserRating] = useState(1);
     return (
         <CP code={code} i={i}>
-            <div className="max-[350px] mx-auto space-y-4 rounded-2xl bg-slate-100/70 px-6 py-4 shadow-md dark:bg-[#18181B] md:w-[350px]">
+            <div className="max-[350px] mx-auto space-y-4 rounded border p-6 md:w-[350px] dark:border-zinc-700 dark:bg-zinc-900">
                 {/* Card Image */}
-                <Image width={350} height={190} className="h-[190px] w-[350px] rounded-2xl bg-gray-400" src={'https://source.unsplash.com/350x190/?furniture'} alt="card navigate ui" />
+                <Image
+                    width={350}
+                    height={190}
+                    className="h-[190px] w-[350px] rounded bg-gray-400"
+                    src="https://images.unsplash.com/photo-1489269637500-aa0e75768394?q=80&w=2041&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="card navigate ui"
+                />
                 {/* Card Heading */}
                 <div className="space-y-2">
-                    <h2 className="font-medium text-slate-800 dark:text-white/90 sm:text-lg md:text-xl">Stylish chair</h2>
+                    <h2 className="font-medium text-slate-800 sm:text-lg md:text-xl dark:text-white/90">Stylish chair</h2>
                     {/* rating  */}
                     <div className="flex space-x-1">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -61,8 +67,8 @@ export default function ProductCard4(i) {
                 </div>
                 {/* Price and action button */}
                 <div className="mt-5 flex items-center justify-between">
-                    <h2 className="font-medium text-gray-700 dark:text-white/60 md:text-xl">$20.00</h2>
-                    <button className="rounded-lg bg-slate-800 px-6 py-2 text-[12px] font-semibold text-white hover:bg-slate-900 sm:text-sm md:text-base">Add to Cart</button>
+                    <h2 className="font-medium text-gray-700 md:text-xl dark:text-white/60">$20.00</h2>
+                    <button className="rounded-lg bg-zinc-700 px-6 py-2 text-[12px] font-semibold text-white hover:bg-zinc-600 sm:text-sm md:text-base">Add to Cart</button>
                 </div>
             </div>
         </CP>

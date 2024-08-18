@@ -7,11 +7,11 @@ import PricingCard2 from '@/components/Card/PricingCard2';
 import ProductCard from '@/components/Card/ProductCard';
 import ProductCard2 from '@/components/Card/ProductCard2';
 import ProductCard3 from '@/components/Card/ProductCard3';
-import ProductCard4 from '@/components/Card/ProductCardWithRating';
+import ProductCard4 from '@/components/Card/ProductCard4';
 import ProfileCard from '@/components/Card/ProfileCard';
 import ProfileCard2 from '@/components/Card/ProfileCard2';
 import ProfileCard3 from '@/components/Card/ProfileCard3';
-import { ComponentPortion } from '@/ui/Server';
+import { ComponentPortion } from '@/ui/componentPortion';
 
 export const metadata = {
     title: 'Card Components',
